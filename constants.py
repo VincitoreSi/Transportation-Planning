@@ -1,4 +1,5 @@
 class CONSTANTS:
-    A = 1
-    B = 2
-    C = 3
+    _A = 1
+    _B = 2
+    _C = 3
+    _SPEED = 25
