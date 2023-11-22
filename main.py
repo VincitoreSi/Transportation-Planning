@@ -10,13 +10,13 @@ from model_split.models import *
 
 def main():
     # Load data
-    with open("data/zonal location.csv", "rb") as f:
+    with open("data/zonal_location.csv", "rb") as f:
         result = chardet.detect(f.read())
 
     # Result will contain the encoding
     enc = result["encoding"]
-    data = pd.read_csv("data/zonal location.csv", encoding=enc)
-    od_org = pd.read_csv("data/production attraction matrix.csv")
+    data = pd.read_csv("data/zonal_location.csv", encoding=enc)
+    od_org = pd.read_csv("data/production_attraction_matrix.csv")
     od_org = od_org.iloc[1:, 2:]
     od_matrix = copy.deepcopy(od_org)
     dist_matrix = calculate_distance_matrix(data)
