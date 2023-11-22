@@ -10,7 +10,8 @@ def calculate_Tij(od_matrix, dist_df, i, j):
     Aj = sum(od_matrix.iloc[:, j])
     Pi = sum(od_matrix.iloc[i, :])
     denominator = [sum(od_matrix.iloc[:, k]) * F.calculate_F(dist_df, i, k) * K.calculate_K(i, k) for k in range(0, len(od_matrix.columns))]
-    return round(Aj * F.calculate_F(dist_df, i, j) * Pi / sum(denominator))  # round to 3 decimal places
+    ans = round(Aj * F.calculate_F(dist_df, i, j) * Pi / sum(denominator))  # round to 3 decimal places
+    return ans
 
 # Calculate T matrix using T[i,j] values
 def calculate_T(od_matrix, dist_df):
